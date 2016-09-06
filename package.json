@@ -1,0 +1,26 @@
+{
+  "name": "highlight-nl",
+  "description": "A library for syntax highlighting NetLogo code",
+  "version": "0.1.0",
+  "main": ".",
+  "homepage": "https://ccl.northwestern.edu/netlogo",
+  "repository": "https://github.com/NetLogo/highlight-nl",
+  "license": "CC0-1.0",
+  "keywords": "syntax highlighting, netlogo",
+  "author": "Center for Connected Learning (https://ccl.northwestern.edu/)",
+  "contributors": [
+    "Jason Bertsche <jason.bertsche@gmail.com> (https://www.github.com/TheBizzle)"
+  ],
+  "devDependencies": {
+    "coffeelint":              "1.15.7",
+    "grunt":                   ">=0.4.0",
+    "grunt-browserify":        "5.0.0",
+    "grunt-coffeelint":        "0.0.16",
+    "grunt-contrib-coffee":    "1.0.0",
+    "grunt-contrib-copy":      "1.0.0",
+    "grunt-contrib-uglify":    "2.0.0",
+    "prismjs":                 "1.5.1",
+    "qunitjs":                 "2.0.1"
+  },
+  "scripts": { "test": "echo \"See https://travis-ci.org/NetLogo/hightlight-js for testing details.\"" }
+}
