@@ -12,7 +12,7 @@ Once the files are available on your page, you will need to access highlight-nl 
 
 ## Example
 
-```
+```javascript
 var highlightNL = require('highlight-nl');
 
 // Get an element on the page with some code in it (highly recommended to be a `pre` element)
