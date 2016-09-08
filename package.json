@@ -1,7 +1,7 @@
 {
   "name": "highlight-nl",
   "description": "A library for syntax highlighting NetLogo code",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": ".",
   "homepage": "https://ccl.northwestern.edu/netlogo",
   "repository": "https://github.com/NetLogo/highlight-nl",
