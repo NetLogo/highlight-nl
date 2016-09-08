@@ -19,7 +19,7 @@ var highlightNL = require('highlight-nl');
 var codeElem = document.getElementById("nl-code");
 
 // Store the highlighted HTML string
-var html = highlightNL(codeElem.innerHTML);
+var html = highlightNL(codeElem.innerText);
 
 // Replace the contents of the element with the syntax-highlighted equivalent
 codeElem.innerHTML = html;
