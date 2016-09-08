@@ -7,13 +7,13 @@
     <script src="dist/highlight-nl.min.js"></script>
     <script>
     window.addEventListener('load', function() {
-      var elem = document.getElementById('wsp-code');
+      var elem = document.getElementById('code');
       elem.innerHTML = require('highlight-nl')(elem.innerText);
     });
     </script>
   </head>
   <body>
-    <pre style="height: 600px; width: 600px; overflow: scroll;" id="wsp-code">
+    <pre style="height: 600px; width: 600px; overflow: scroll;" id="code">
 globals [grass]  ;; keep track of how much grass there is
 ;; Sheep and wolves are both breeds of turtle.
 breed [sheep a-sheep]  ;; sheep is its own plural, so we use "a-sheep" as the singular.
