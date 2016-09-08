@@ -5,25 +5,26 @@ Prism = require('prismjs')
 notWordCh = /[\s\[\(\]\)]/.source
 wordCh    = /[^\s\[\(\]\)]/.source
 wordEnd   = "(?=#{notWordCh}|$)"
+wordStart = "(#{notWordCh}|^)"
 
-wordRegEx   = (pattern) -> new RegExp("#{pattern}#{wordEnd}", 'i')
+wordRegEx   = (pattern) -> { pattern: new RegExp("#{wordStart}(#{pattern})#{wordEnd}", 'i'), lookbehind: true }
 memberRegEx = (words)   -> wordRegEx("(?:#{words.join('|')})")
 
 keywordRegex = (->
-  normalKeyword = memberRegEx(keywords).source
-  xsOwn         = wordRegEx("#{wordCh}*-own").source
+  normalKeyword = memberRegEx(keywords).pattern.source
+  xsOwn         = wordRegEx("#{wordCh}*-own").pattern.source
   new RegExp("#{normalKeyword}|#{xsOwn}", 'i')
 )()
 
 NetLogo = {
   comment:  { pattern: /(^|[^\\]);.*/, lookbehind: true }
 , string:   { pattern: /"(?:[^\\]|\\.)*?"/, greedy: true }
-, command:  memberRegEx(commands)
-, constant: memberRegEx(constants)
 , keyword:  keywordRegex
-, number:   /0x[a-f\d]+|[-+]?(?:\.\d+|\d+\.?\d*)(?:e[-+]?\d+)?/i
+, command:  memberRegEx(commands)
 , reporter: memberRegEx(reporters)
-, variable: new RegExp(wordCh + "+")
+, number:   wordRegEx(/0x[a-f\d]+|[-+]?(?:\.\d+|\d+\.?\d*)(?:e[-+]?\d+)?/.source)
+, constant: memberRegEx(constants)
+, variable: wordRegEx(wordCh + "+")
 }
 
 # String -> String
