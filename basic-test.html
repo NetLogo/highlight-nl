@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="dist/highlight-nl.css">
     <script src="dist/highlight-nl.min.js"></script>
     <script>
-    window.recolor = function() {
+    window.addEventListener('load', function() {
       var elem = document.getElementById('wsp-code');
       elem.innerHTML = require('highlight-nl')(elem.innerText);
-    };
+    });
     </script>
   </head>
   <body>
@@ -143,6 +143,5 @@ end
 ; Copyright 1997 Uri Wilensky.
 ; See Info tab for full copyright and license.
     </pre>
-    <button onclick="recolor()">Reset</button>
   </body>
 </html>
