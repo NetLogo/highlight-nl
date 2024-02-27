@@ -4,6 +4,12 @@
 
 highlight-nl is a simple JavaScript library for performing in-browser syntax highlighting of NetLogo source code.
 
+## Installation
+
+  * Run `npm install`
+  * Run `grunt`
+  * Retrieve the built `.css` file and `.min.js` from the `dist` directory
+
 ## Usage
 
 highlight-nl ships with a `.js` file and a `.css` file.  The `.js` file must be included in your page (`<script src="highlight-nl.js"></script>`) in order for the functions to be available.  The CSS file with the default NetLogo syntax highlighting scheme that is used in NetLogo and NetLogo Web can be included (`<link href="highlight-nl.css" rel="stylesheet" />`), but is not required.  If you wish to provide your own CSS for highlighting the elements, please see the [Custom CSS](#custom-css) section below.
